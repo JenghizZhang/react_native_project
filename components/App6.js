@@ -1,71 +1,67 @@
-// 6、Flex布局练习
-import React, { Component } from 'react'
-import { View ,Text, StyleSheet, Dimensions} from 'react-native'
+/**
+ * @date 7/12/22 10:50 PM
+ * @author Yunsong Zhang
+ * */
+import {View, Text, StyleSheet} from 'react-native';
+import React from 'react';
 
-const {width} = Dimensions.get("window")
-
-
-class Row extends Component {
-    render(){
-        return(
-            <View style={styles.row}>
-                <View style={styles.box1}><Text>1</Text></View>
-                <View style={styles.box2}><Text>2</Text></View>
-                <View style={styles.box3}><Text>3</Text></View>
-            </View>
-        )
-    }
+function Row() {
+    return (
+        <View style={styles.row}>
+            <View style={styles.box1}><Text>123</Text></View>
+            <View style={styles.box2}><Text>123</Text></View>
+            <View style={styles.box3}><Text>123</Text></View>
+        </View>
+    );
 }
 
-
-
-export default class App6 extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={{fontSize:18}}>Flex布局练习</Text>
-
-                <View style={styles.boxs}>
-                    <Row />
-                    <Row />
-                    <Row />
-                </View>
+export default function App6() {
+    let arr = [1, 1, 1];
+    return (
+        <View style={styles.container}>
+            <Text>Flex 布局练习</Text>
+            <View style={styles.box}>
+                {arr.map(i=><Row></Row>)}
             </View>
-        )
-    }
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-    container:{
-        alignItems:"center",
-        paddingTop:80
+    container: {
+        paddingTop: 20,
+        flex: 1,
+        justifyContent: "flex-start",
+        alignItems: "center",
     },
-    boxs:{
-        width: width * 0.9,   // 0.9倍的屏幕宽度
-        height:200,
-        backgroundColor:"#ccc",
-        marginTop:10
+    box: {
+        marginTop: 10,
+        width: "90%",
+        height: 200,
+        backgroundColor: "lightpink",
+
     },
-    row:{
-        flex:1,
-        borderWidth:1,
-        borderColor:"#000",
-        //设置主轴方向为水平
-        flexDirection:"row"
+    row: {
+        margin: 10,
+        flex: 1,
+        // backgroundColor: "green",
+        borderWidth: 1,
+        borderColor: "#000",
+        flexDirection: "row",
     },
-    box1:{
-        flex:1.5,
-        borderWidth:1,
-        borderColor:"#f00",
+    box1: {
+        flex: 1.5,
+        borderWidth: 1,
+        borderColor: "green",
     },
-    box2:{
-        flex:1,
-        borderWidth:1,
-        borderColor:"#f00",
+    box2: {
+        flex: 1,
+        borderWidth: 1,
+        borderColor: "blue",
     },
-    box3:{
-        flex:2,
-        borderWidth:1,
-        borderColor:"#f00",
+    box3: {
+        flex: 2,
+        borderWidth: 1,
+        borderColor: "gray",
     }
-})
+});
