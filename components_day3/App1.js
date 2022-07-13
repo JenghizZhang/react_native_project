@@ -1,48 +1,37 @@
-import React, { Component } from 'react'
-import { View, FlatList, Text} from 'react-native'
+/**
+ * @date 7/13/22 6:13 PM
+ * @author Yunsong Zhang
+ * */
+import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
+import React, {useState} from 'react';
 
-const arr_data=[
-    {
-        id:1,
-        data:10
-    },
-    {
-        id:2,
-        data:20
-    },
-    {
-        id:3,
-        data:30
-    },
-    {
-        id:4,
-        data:40
-    },
-]
+export default function App1() {
+    let [img, setImg] = useState();
 
-export default class App1 extends Component {
+    return (
+        <View style={styles.container}>
+            <Text>App1</Text>
+            <Image source={{uri: "youhaohuo"}} style={styles.youhaohuo}></Image>
 
-    constructor(props){
-        super(props)
-        this.state = {
-            arr_data
-        }
-    }
+            <FlatList>
 
-    renderDate({item}){   //这个函数决定了每一项的展示方式    item就是每一项数据
-        return(
-            <Text>{item.id}、{item.data}</Text>
-        )
-    }
-    render() {
-        return (
-            <View>
-                <FlatList 
-                    numColumns={2}    //每行显示多少项
-                    data={this.state.arr_data}   //数据源
-                    renderItem= {this.renderDate}   //渲染函数
-                />
-            </View>
-        )
-    }
+            </FlatList>
+        </View>
+
+    );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "lightpink",
+        padding: 10,
+        // marginLeft:10,
+    },
+    youhaohuo: {
+        width: 50,
+        height: 16,
+        marginTop: 10,
+        marginBottom: 10,
+    }
+});
