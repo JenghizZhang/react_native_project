@@ -1,43 +1,33 @@
-// 7、Button按钮组件  TouchableOpacity组件
+/**
+ * @date 7/13/22 1:16 AM
+ * @author Yunsong Zhang
+ * */
+import {View, Button, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import React from 'react';
 
-import React, { Component } from 'react'
-import {View, Button, Text, StyleSheet, TouchableOpacity} from 'react-native'
- 
-export default class App7 extends Component {
-
-    constructor(props){
-        super(props)
-
-        this.state = {
-            num:20
-        }
-
-        this.handlePress = this.handlePress.bind(this)
-    }
-
-    handlePress(){
-        
-        this.setState({
-            num:this.state.num+1
-        })
-    }
-    render() {
-        return (
-            <View>
-                <Text>{this.state.num}</Text>
-                <Button title="按钮中的文本" color="skyblue" onPress={this.handlePress} style={styles.btn}></Button>
-                <TouchableOpacity onPress={this.handlePress} style={styles.btn}><Text>点击自增</Text></TouchableOpacity>
-            </View>
-        )
-    }
+export default function App7() {
+    let [num, setNum] = React.useState(0);
+    let click = () => {
+        // alert('123');
+        setNum(++num);
+    };
+    return (
+        <View>
+            <Text>{num}</Text>
+            <Button title="按钮中的文本" color="skyblue" style={{margin: 10, borderWidth: 10, borderColor: "green"}}
+                    onPress={click}></Button>
+            <TouchableOpacity style={styles.btn} onPress={click}><Text>点击自增</Text></TouchableOpacity>
+        </View>
+    );
 }
+
 const styles = StyleSheet.create({
-    btn:{
-        width:100,
-        height:100,
-        backgroundColor:"pink",
-        borderRadius:50,
-        justifyContent:"center",
-        alignItems:"center"
+    btn: {
+        width: 100,
+        height: 100,
+        backgroundColor: "pink",
+        borderRadius: 50,
+        alignItems: "center",
+        justifyContent: "center"
     }
-})
+});
