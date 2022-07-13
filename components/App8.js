@@ -1,26 +1,20 @@
-// 8、Image组件
-
-import React, { Component } from 'react'
-import { View,Text, Image, StyleSheet} from 'react-native'
-import Img from "../res/logo.png"
+/**
+ * @date 7/13/22 1:47 AM
+ * @author Yunsong Zhang
+ * */
+import {View, Text, Image} from 'react-native';
+import React, {Component} from 'react';
+import img from '../res/amazon.jpg';
 
 export default class App8 extends Component {
     render() {
         return (
             <View>
-                <Text>方式一：</Text>
-                <Image source={Img}/>
-                <Text>方式二：</Text>
-                <Image source={require("../res/logo.png")}/>
-                <Text>方式三：</Text>
-                <Image source={{uri:"https://www.baidu.com/img/pc_1c6e30772d5e4103103bd460913332f9.png"}} style={styles.img}/>
+                <Text>App8</Text>
+                <Image source={img} style={{width: "100%", height: "30%"}} resizeMethod={"scale"}></Image>
+                <Image source={require("../res/amazon.jpg")} style={{width: "100%", height: "30%"}}></Image>
+                <Image source={{uri:"https://img1.baidu.com/it/u=1966616150,2146512490&fm=253&fmt=auto&app=138&f=JPEG?w=751&h=500"}} style={{width: "100%", height: "30%"}}></Image>
             </View>
-        )
+        );
     }
 }
-const styles = StyleSheet.create({
-    img:{
-        width: 300,
-        height: 100
-    }
-})
