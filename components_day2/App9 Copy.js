@@ -1,7 +1,7 @@
 // 9、WebView组件
 
 import React, { Component } from 'react'
-import {WebView} from 'react-native'
+import {WebView} from 'react-native-webview'
 
 export default class App9 extends Component {
     render() {
