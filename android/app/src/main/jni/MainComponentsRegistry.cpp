@@ -15,7 +15,7 @@ MainComponentsRegistry::sharedProviderRegistry() {
   auto providerRegistry = CoreComponentsRegistry::sharedProviderRegistry();
 
   // Custom Fabric Components go here. You can register custom
-  // components coming from your App or from 3rd party libraries here.
+  // components coming from your App_login or from 3rd party libraries here.
   //
   // providerRegistry->add(concreteComponentDescriptorProvider<
   //        AocViewerComponentDescriptor>());

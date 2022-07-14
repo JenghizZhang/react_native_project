@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 
 const {height, width, scale} = Dimensions.get('window');
 
-export default class App extends Component {
+export default class App_login extends Component {
     press = (e) => {
         // console.log(e.target)
         alert('服务器未启动，无法完成该操作');
