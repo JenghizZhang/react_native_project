@@ -1,112 +1,154 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+ * @date 7/13/22 7:49 PM
+ * @author Yunsong Zhang
+ * */
+import {View, Text, StyleSheet, Dimensions, Image, TextInput, TouchableOpacity} from 'react-native';
+import React, {Component} from 'react';
 
-import React from 'react';
-import type { Node } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+const {height, width, scale} = Dimensions.get('window');
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export default class App extends Component {
+    press = (e) => {
+        // console.log(e.target)
+        alert('服务器未启动，无法完成该操作');
+    };
 
-const Section = ({ children, title }): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits. 123
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+    render() {
+        return (
+            <View style={styles.container}>
+                {/*版心盒子*/}
+                <View style={styles.wrapper}>
+                    {/*头像*/}
+                    <Image source={require('./res/avatar.jpg')} style={styles.avatar} />
+                    {/*用户名密码*/}
+                    <TextInput
+                        style={[styles.txtInput, styles.username]}
+                        placeholder="请输入用户名"
+                        placeholderTextColor="gray"
+                     />
+                    <TextInput style={styles.txtInput}
+                               placeholder="请输入密码"
+                               placeholderTextColor="gray"
+                               secureTextEntry={true}
+                    />
+                    {/*登录按钮*/}
+                    <TouchableOpacity
+                        style={styles.loginBtn}
+                        activeOpacity={0.7}
+                    >
+                        {/* 和文字相关的属性，都加在 Text组件上(无继承效果)*/}
+                        <Text style={styles.loginTxt}>登 录</Text>
+                    </TouchableOpacity>
+                    {/*忘记密码和注册新用户*/}
+                    <View style={styles.btns}>
+                        <TouchableOpacity activeOpacity={0.5} onPress={this.press}>
+                            <Text>忘记密码</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity activeOpacity={0.5} onPress={this.press}>
+                            <Text>注册新用户</Text>
+                        </TouchableOpacity>
+                    </View>
+                    {/*其他方式*/}
+                    <View style={styles.bottomBox}>
+                        <View style={styles.line} />
+                        <Text style={styles.bottomTxt}>其他方式登录</Text>
+                        <View style={styles.bottomImages}>
+                            <TouchableOpacity activeOpacity={0.5}>
+                                <Image source={require('./res/icon1.png')} style={styles.bottomImage}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.5}>
+                                <Image source={require('./res/icon2.png')} style={[styles.bottomImage,styles.bottomImageSnd]}/>
+                            </TouchableOpacity>
+                            <TouchableOpacity activeOpacity={0.5}>
+                                <Image source={require('./res/icon3.png')} style={styles.bottomImage}/>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#eee',
+        alignItems: 'center',
+    },
+    wrapper: {
+        width: '90%',
+        height,
+        // backgroundColor: "white",
+        alignItems: 'center',
+    },
+    avatar: {
+        height: 70,
+        width: 70,
+        borderRadius: 35,
+        borderColor: 'white',
+        borderWidth: 1,
+        marginTop: '30%',
+        marginBottom: '10%',
+    },
+    txtInput: {
+        width: '100%',
+        backgroundColor: 'white',
+        height: '5%',
+        paddingLeft: 10,
+        paddingRight: 10,
+    },
+    username: {
+        marginBottom: 3,
+    },
+    loginBtn: {
+        width: '100%',
+        height: 30,
+        backgroundColor: 'skyblue',
+        borderRadius: 10,
+        marginTop: 50,
+    },
+    loginTxt: {
+        textAlign: 'center',
+        lineHeight: 30,
+        color: '#fff',
+    },
+    btns: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 10,
+        // marginTop: 10
+    },
+    bottomBox: {
+        width: '100%',
+        position: 'absolute',
+        bottom: 50,
+        alignItems: 'center',
+    },
+    line: {
+        width: '100%',
+        height: 1 / scale,
+        backgroundColor: '#999',
+    },
+    bottomTxt: {
+        width: 100,
+        marginTop: -9,
+        backgroundColor: '#eee',
+        textAlign: 'center',
+        fontSize: 12,
+    },
+    bottomImages: {
+        flexDirection: 'row',
+        marginTop: 10,
+    },
+    bottomImage: {
+        width: 40,
+        height: 40,
+        borderRadius: 20,
+    },
+    bottomImageSnd: {
+        marginLeft: 20,
+        marginRight: 20,
+    },
 });
-
-export default App;
