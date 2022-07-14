@@ -16,8 +16,21 @@ export default function Nav() {
     return (
         <View style={{flex: 1}}>
             <Tab.Navigator
-                screenOptions={{headerShown: false, tabBarActiveTintColor: '#e91e63'}}
+                screenOptions={{
+                    headerShown: false,
+                    tabBarActiveTintColor: '#f40',
+                    tabBarStyle: {
+                        backgroundColor: "#eee",
+                        height: 60,
+                    },
+                    tabBarItemStyle: {
+                        paddingBottom: 8,
+                        // backgroundColor: "yellow",
+                    },
+                    swipeEnabled: true
+                }}
                 initialRouteName="food"
+
             >
                 <Tab.Screen
                     name="food" component={Food}
