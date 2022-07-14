@@ -9,6 +9,7 @@ import Food from '../../pages/food/Food';
 import Movie from '../../pages/movie/Movie';
 import Hotel from '../../pages/hotel/Hotel';
 import Bank from '../../pages/bank/Bank';
+import {globalColor} from '../../utils/globalStyle'
 
 const Tab = createBottomTabNavigator();
 
@@ -18,14 +19,13 @@ export default function Nav() {
             <Tab.Navigator
                 screenOptions={{
                     headerShown: false,
-                    tabBarActiveTintColor: '#f40',
+                    tabBarActiveTintColor: globalColor,
                     tabBarStyle: {
                         backgroundColor: "#eee",
                         height: 60,
                     },
                     tabBarItemStyle: {
                         paddingBottom: 8,
-                        // backgroundColor: "yellow",
                     },
                     swipeEnabled: true
                 }}
@@ -35,7 +35,7 @@ export default function Nav() {
                 <Tab.Screen
                     name="food" component={Food}
                     options={{
-                        tabBarLabel: '美食',
+                        tabBarLabel: 'Food',
                         tabBarIcon: ({focused, color, size}) => (
                             <Image
                                 source={require('../../res/icon_food.png')}
@@ -47,7 +47,7 @@ export default function Nav() {
                 <Tab.Screen
                     name="movie" component={Movie}
                     options={{
-                        tabBarLabel: '电影',
+                        tabBarLabel: 'Movie',
                         tabBarIcon: ({focused, color, size}) => (
                             <Image
                                 source={require('../../res/icon_movie.png')}
@@ -59,7 +59,7 @@ export default function Nav() {
                 <Tab.Screen
                     name="hotel" component={Hotel}
                     options={{
-                        tabBarLabel: '酒店',
+                        tabBarLabel: 'Hotel',
                         tabBarIcon: ({focused, color, size}) => (
                             <Image
                                 source={require('../../res/icon_hotel.png')}
@@ -71,7 +71,7 @@ export default function Nav() {
                 <Tab.Screen
                     name="bank" component={Bank}
                     options={{
-                        tabBarLabel: '银行',
+                        tabBarLabel: 'Wallet',
                         tabBarIcon: ({focused, color, size}) => (
                             <Image
                                 source={require('../../res/icon_bank.png')}

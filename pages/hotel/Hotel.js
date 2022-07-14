@@ -1,5 +1,5 @@
 /**
- * @date 7/14/22 9:15 AM
+ * @date 7/14/22 5:31 PM
  * @author Yunsong Zhang
  * */
 import {View, Text} from 'react-native';
