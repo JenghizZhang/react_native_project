@@ -4,38 +4,60 @@
  * */
 import {View, Text, StyleSheet, ScrollView, Dimensions} from 'react-native';
 import React from 'react';
+import Swiper from 'react-native-swiper';
 
 const {width} = Dimensions.get("window");
 
-export default function FoodMenu(props) {
-    return (
-        <View {...props}>
-            <ScrollView
-                horizontal
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-            >
-                <View style={styles.box}>
-                    <Text>1</Text>
-                    <Text style={styles.boxBottom}>qwe</Text>
+export default class FoodMenu extends React.Component {
+    render() {
+        return (
+            <View {...this.props}>
+                {/*<ScrollView*/}
+                {/*    horizontal*/}
+                {/*    pagingEnabled*/}
+                {/*    showsHorizontalScrollIndicator={false}*/}
+                {/*>*/}
+                {/*    <View style={styles.box}>*/}
+                {/*        <Text>1</Text>*/}
+                {/*    </View>*/}
+                {/*    <View style={[styles.box, {backgroundColor: "#fcf"}]}>*/}
+                {/*        <Text>2</Text>*/}
+                {/*    </View>*/}
+                {/*</ScrollView>*/}
+                <View style={styles.wrapper}>
+                    <Swiper autoplay>
+                        <View style={styles.slide1}>
+                            <Text style={styles.text}>Hello Swiper</Text>
+                        </View>
+                        <View style={styles.slide2}>
+                            <Text style={styles.text}>Beautiful</Text>
+                        </View>
+                    </Swiper>
                 </View>
-                <View style={[styles.box, {backgroundColor: "#fcf"}]}>
-                    <Text>2</Text>
-                </View>
-            </ScrollView>
-        </View>
-    );
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-    box: {
+    wrapper: {
         width,
         height: 200,
-        backgroundColor: "red"
+        backgroundColor: "white"
     },
-    boxBottom: {
-        position: "absolute",
-        bottom: 0,
-        backgroundColor:""
+    slide1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
+    slide2: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+        color: 'red',
+        fontSize: 30,
+        fontWeight: 'bold'
+    }
 });
