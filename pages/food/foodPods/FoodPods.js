@@ -23,13 +23,13 @@ export default function FoodPods(props) {
                                 <Image style={styles.itemImage}
                                        source={{uri: 'https://www.washingtonpost.com/resizer/Y8B2f3IF5ZZSZqdR-EI8wyvGDmc=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KXWS4XFKMQ5QBN7KGRHVEYJBD4.jpg'}}></Image>
                                 <View style={styles.itemRight}>
-                                    <Text style={styles.itemTitle}>店名</Text>
+                                    <Text style={styles.itemTitle}>International Grill and Bar</Text>
                                     <View>
                                         <View style={styles.scoreAndPrice}>
-                                            <Text>评分</Text>
+                                            <Text>Star: 4.5</Text>
                                             <Text style={styles.itemPrice}>$ 12.00</Text>
                                         </View>
-                                        <Text style={styles.itemType}>服务有哪些</Text>
+                                        <Text style={styles.itemType}>Outdoor dining, Delivery, Takeout</Text>
                                     </View>
                                 </View>
                             </View>
