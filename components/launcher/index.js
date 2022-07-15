@@ -9,7 +9,7 @@ import {img} from "react-native/Libraries/Animated/AnimatedWeb";
 const {width, height} = Dimensions.get("window");
 export default function Launcher() {
     return (
-        <Image style={styles.img} source={require("../../res/launcher_image.png")}></Image>
+        <Image style={styles.img} source={require("../../res/launcher.jpg")}></Image>
     );
 }
 

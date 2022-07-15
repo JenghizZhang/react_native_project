@@ -2,7 +2,7 @@
   "data": [
     [
       {
-        "title": "精选美食",
+        "title": "Food",
         "image": "ms"
       },
       {
@@ -10,81 +10,81 @@
         "image": "ktv"
       },
       {
-        "title": "自助餐",
+        "title": "Buffet",
         "image": "zzc"
       },
       {
-        "title": "酒吧",
+        "title": "Bar",
         "image": "xxyl"
       },
       {
-        "title": "外卖",
+        "title": "Takeout",
         "image": "wm"
       }
     ],
     [
       {
-        "title": "新品",
+        "title": "Grocery",
         "image": "jrxd"
       },
       {
-        "title": "小吃快餐",
+        "title": "KFC",
         "image": "xckc"
       },
       {
-        "title": "酒店美食",
+        "title": "Hotel",
         "image": "jd"
       },
       {
-        "title": "甜点饮品",
+        "title": "Dessert",
         "image": "tdyp"
       },
       {
-        "title": "其他分类",
+        "title": "Other",
         "image": "qbfl"
       }
     ],
     [
       {
-        "title": "生活服务",
+        "title": "Service",
         "image": "shfw"
       },
       {
-        "title": "火车票机票",
+        "title": "Tickets",
         "image": "zzc"
       },
       {
-        "title": "丽人",
+        "title": "Hair Cut",
         "image": "lr"
       },
       {
-        "title": "周边游",
+        "title": "Travel",
         "image": "zby"
       },
       {
-        "title": "足疗按摩",
+        "title": "Massage",
         "image": "zlam"
       }
     ],
     [
       {
-        "title": "购物",
+        "title": "Shopping",
         "image": "jd"
       },
       {
-        "title": "美甲",
+        "title": "Nail",
         "image": "mj"
       },
       {
-        "title": "景点门票",
+        "title": "Tickets",
         "image": "jdmp"
       },
       {
-        "title": "旅游",
+        "title": "Travel",
         "image": "ly"
       },
       {
-        "title": "全部分类",
+        "title": "All",
         "image": "qbfl"
       }
     ]

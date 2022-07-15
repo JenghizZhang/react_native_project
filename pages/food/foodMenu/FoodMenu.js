@@ -2,10 +2,10 @@
  * @date 7/14/22 7:05 PM
  * @author Yunsong Zhang
  * */
-import {View, Text, StyleSheet, ScrollView, Dimensions, FlatList, Image} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Dimensions, FlatList, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Swiper from 'react-native-swiper';
-
+import {globalColor} from '../../../utils/globalStyle';
 import {data} from '../../../utils/FeatureData.json';
 
 const {width} = Dimensions.get("window");
@@ -13,11 +13,11 @@ const {width} = Dimensions.get("window");
 export default class FoodMenu extends React.Component {
     renderData = ({item}) => {
         return (
-            <View style={styles.slideContainer}>
+            <TouchableOpacity style={styles.slideContainer} activeOpacity={0.5}>
                 {/*<Image source={{uri: "hcpjpcopy"}} style={styles.swiperImage}></Image>*/}
                 <Image source={{uri: item.image}} style={styles.swiperImage}></Image>
                 <Text>{item.title}</Text>
-            </View>
+            </TouchableOpacity>
         );
     };
 
@@ -37,8 +37,29 @@ export default class FoodMenu extends React.Component {
                     </View>
                 </ScrollView>*/}
                 <View style={styles.wrapper}>
-                    <Swiper >
-                    {/*<Swiper autoplay>*/}
+                    <Swiper
+                        showsPagination
+                        activeDot={(<View style={{
+                            backgroundColor: globalColor,
+                            width: 8,
+                            height: 8,
+                            borderRadius: 4,
+                            marginLeft: 3,
+                            marginRight: 3,
+                            marginTop: 3,
+                        }}/>)}
+                        dot={(<View style={{
+                            backgroundColor: 'rgba(0,0,0,.15)',
+                            width: 8,
+                            height: 8,
+                            borderRadius: 4,
+                            marginLeft: 3,
+                            marginRight: 3,
+                            marginTop: 3,
+                        }}/>)}
+                        paginationStyle={{position: 'absolute', bottom: 5,}}
+                    >
+                        {/*<Swiper autoplay>*/}
                         <View style={styles.slide}>
                             <FlatList
                                 numColumns={5}
@@ -75,18 +96,18 @@ const styles = StyleSheet.create({
         // marginTop: 5,
         paddingTop: 5,
         width,
-        height: 150,
+        height: 155,
         backgroundColor: "white"
     },
     slide: {
-        flex: 1,
+        // flex: 1,
         justifyContent: "center",
         alignItems: 'center',
     },
     slideContainer: {
         width: width / 5,
         alignItems: "center",
-        borderWidth: 1
+        // borderWidth: 1
     },
     swiperImage: {
         height: 45,
