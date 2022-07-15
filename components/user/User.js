@@ -19,7 +19,7 @@ export default class App_login extends Component {
                 {/*版心盒子*/}
                 <View style={styles.wrapper}>
                     {/*头像*/}
-                    <Image source={require('./res/avatar.jpg')} style={styles.avatar} />
+                    <Image source={require('../../res/avatar.jpg')} style={styles.avatar} />
                     {/*用户名密码*/}
                     <TextInput
                         style={[styles.txtInput, styles.username]}
@@ -54,13 +54,13 @@ export default class App_login extends Component {
                         <Text style={styles.bottomTxt}>其他方式登录</Text>
                         <View style={styles.bottomImages}>
                             <TouchableOpacity activeOpacity={0.5}>
-                                <Image source={require('./res/icon1.png')} style={styles.bottomImage}/>
+                                <Image source={require('../../res/icon1.png')} style={styles.bottomImage}/>
                             </TouchableOpacity>
                             <TouchableOpacity activeOpacity={0.5}>
-                                <Image source={require('./res/icon2.png')} style={[styles.bottomImage,styles.bottomImageSnd]}/>
+                                <Image source={require('../../res/icon2.png')} style={[styles.bottomImage,styles.bottomImageSnd]}/>
                             </TouchableOpacity>
                             <TouchableOpacity activeOpacity={0.5}>
-                                <Image source={require('./res/icon3.png')} style={styles.bottomImage}/>
+                                <Image source={require('../../res/icon3.png')} style={styles.bottomImage}/>
                             </TouchableOpacity>
                         </View>
                     </View>

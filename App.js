@@ -5,9 +5,13 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+// import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Launcher from './components/launcher';
 import Nav from './components/nav';
+import User from './components/user/User';
 
+const Stack = createNativeStackNavigator();
 export default function App() {
     let [showLaunch, setShowLaunch] = useState(true);
     useEffect(() => {
@@ -18,7 +22,16 @@ export default function App() {
     return (
         <View style={styles.container}>
             {/*<Text>App</Text>*/}
-            {showLaunch ? <Launcher></Launcher> : <NavigationContainer><Nav></Nav></NavigationContainer>}
+            {showLaunch ? <Launcher></Launcher> :
+                <NavigationContainer>
+                    <Stack.Navigator initialRouteName="Nav" screenOptions={{headerShown:false}}>
+                        <Stack.Screen name="Nav" component={Nav}/>
+                        <Stack.Screen name="User" component={User}/>
+                    </Stack.Navigator>
+
+                </NavigationContainer>}
+            {/*{showLaunch ? <Launcher></Launcher> : <NavigationContainer><Nav></Nav></NavigationContainer>}*/}
+            {/*{showLaunch ? <Launcher></Launcher> : <User></User>}*/}
         </View>
     );
 }

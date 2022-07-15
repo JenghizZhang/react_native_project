@@ -2,7 +2,7 @@
  * @date 7/14/22 5:31 PM
  * @author Yunsong Zhang
  * */
-import {View, Text, Image, TextInput, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, Image, TextInput, StyleSheet, Dimensions, TouchableOpacity} from 'react-native';
 import React from 'react';
 import SelectDropdown from 'react-native-select-dropdown';
 import {globalColor} from "../../../utils/globalStyle";
@@ -32,7 +32,9 @@ export default function FoodTop(props) {
                 <Image source={require("../../../res/icon_search.png")} style={styles.searchIcon}></Image>
                 <TextInput placeholder="type in what you like" style={styles.searchInput}></TextInput>
             </View>
-            <Image source={require("../../../res/icon_user.png")} style={styles.user}></Image>
+            <TouchableOpacity onPress={() => props.navigation.navigate('User')}>
+                <Image source={require("../../../res/icon_user.png")} style={styles.user}></Image>
+            </TouchableOpacity>
         </View>
     );
 }
