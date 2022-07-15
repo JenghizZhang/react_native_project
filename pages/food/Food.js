@@ -9,21 +9,41 @@ import {globalColor} from "../../utils/globalStyle";
 import FoodMenu from "./foodMenu/FoodMenu";
 import FoodSale from "./foodSale/FoodSale";
 import FoodPods from "./foodPods/FoodPods";
+// import from "uuid"
 
 export default function Food() {
+    let data = [
+        {
+            title: "",
+            data: [0, 1, 2]
+        }
+    ];
     return (
         <View style={{flex: 1, backgroundColor: "#eee"}}>
             {/*FoodTop*/}
             <FoodTop style={styles.topContainer}></FoodTop>
+            {/*<SectionList*/}
+            {/*    sections={data}*/}
+            {/*    keyExtractor={(item, index) => item + index}*/}
+            {/*    renderItem={({item, index}) => {*/}
+            {/*        if (index === 0) {*/}
+            {/*            return <FoodMenu key={index} style={styles.menuContainer}></FoodMenu>;*/}
+            {/*        } else if (index === 1) {*/}
+            {/*            return <FoodSale key={index} style={styles.saleContainer}></FoodSale>*/}
+            {/*        }else{*/}
+            {/*            return <FoodPods key={index} style={styles.podContainer}></FoodPods>*/}
+            {/*        }*/}
+            {/*    }}*/}
+            {/*></SectionList>*/}
 
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {/*FoodMenu*/}
-                <FoodMenu style={styles.menuContainer}></FoodMenu>
-                {/*Sale*/}
-                <FoodSale style={styles.saleContainer}></FoodSale>
-                {/*FoodPods*/}
-                <FoodPods style={styles.podContainer}></FoodPods>
-            </ScrollView>
+
+            {/*FoodMenu*/}
+            <FoodMenu style={styles.menuContainer}></FoodMenu>
+            {/*Sale*/}
+            <FoodSale style={styles.saleContainer}></FoodSale>
+
+            {/*FoodPods*/}
+            <FoodPods style={styles.podContainer}></FoodPods>
         </View>
     );
 }

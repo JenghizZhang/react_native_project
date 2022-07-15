@@ -38,6 +38,7 @@ export default class FoodMenu extends React.Component {
                 </ScrollView>*/}
                 <View style={styles.wrapper}>
                     <Swiper
+                        autoplay
                         showsPagination
                         activeDot={(<View style={{
                             backgroundColor: globalColor,

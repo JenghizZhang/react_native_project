@@ -42,6 +42,7 @@ export default function FoodSale(props) {
     return (
         <View {...props}>
             <Bar title="On Sale!"></Bar>
+
             <FlatList
                 numColumns={3}
                 data={discounts}

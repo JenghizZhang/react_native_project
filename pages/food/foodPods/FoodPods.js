@@ -2,7 +2,7 @@
  * @date 7/15/22 12:08 AM
  * @author Yunsong Zhang
  * */
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions, ScrollView} from 'react-native';
 import React from 'react';
 import {globalColor} from "../../../utils/globalStyle";
 import Bar from "../bar/Bar";
@@ -14,27 +14,31 @@ export default function FoodPods(props) {
     return (
         <View {...props}>
             <Bar title="Restaurant"></Bar>
-            {
-                arr.map((_, index) => (
-                    <View key={index}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {
+                    arr.map((_, index) => (
+                        <View key={index}>
 
-                        <View style={styles.item}>
-                            <Image style={styles.itemImage}
-                                   source={{uri: 'https://www.washingtonpost.com/resizer/Y8B2f3IF5ZZSZqdR-EI8wyvGDmc=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KXWS4XFKMQ5QBN7KGRHVEYJBD4.jpg'}}></Image>
-                            <View style={styles.itemRight}>
-                                <Text style={styles.itemTitle}>店名</Text>
-                                <View>
-                                    <View style={styles.scoreAndPrice}>
-                                        <Text>评分</Text>
-                                        <Text style={styles.itemPrice}>$ 12.00</Text>
+                            <View style={styles.item}>
+                                <Image style={styles.itemImage}
+                                       source={{uri: 'https://www.washingtonpost.com/resizer/Y8B2f3IF5ZZSZqdR-EI8wyvGDmc=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/KXWS4XFKMQ5QBN7KGRHVEYJBD4.jpg'}}></Image>
+                                <View style={styles.itemRight}>
+                                    <Text style={styles.itemTitle}>店名</Text>
+                                    <View>
+                                        <View style={styles.scoreAndPrice}>
+                                            <Text>评分</Text>
+                                            <Text style={styles.itemPrice}>$ 12.00</Text>
+                                        </View>
+                                        <Text style={styles.itemType}>服务有哪些</Text>
                                     </View>
-                                    <Text style={styles.itemType}>服务有哪些</Text>
                                 </View>
                             </View>
                         </View>
-                    </View>
-                ))
-            }
+                    ))
+                }
+            </ScrollView>
+
+
         </View>
     );
 }
