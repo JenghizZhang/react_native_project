@@ -9,7 +9,7 @@ import Food from '../../pages/food/Food';
 import Movie from '../../pages/movie/Movie';
 import Hotel from '../../pages/hotel/Hotel';
 import Bank from '../../pages/bank/Bank';
-import {globalColor} from '../../utils/globalStyle'
+import {globalColor} from '../../utils/globalStyle';
 
 const Tab = createBottomTabNavigator();
 
